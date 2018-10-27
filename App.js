@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import RootNavigation from './navigation/RootNavigation';
@@ -33,12 +33,6 @@ export default class App extends React.Component {
 
   _loadResourcesAsync = async () => {
     return Promise.all([
-      await Asset.loadAsync([
-        require('./assets/images/cover.png'),
-        require('./assets/images/profileBack.png'),
-        require('./assets/images/thumbsup.png'),
-        require('./assets/images/thumbsdown.png')
-      ]),
       await Font.loadAsync({
         ...Ionicons.font,
         'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
