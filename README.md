@@ -10,59 +10,59 @@
 
 3. Modify the App.js file like below
 
-3. 1. Import the react navigation into App.js file
+  1. Import the react navigation into App.js file
 
-  import { createStackNavigator, createAppContainer } from 'react-navigation';
+    import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-3. 2. Create two different class 
+  2. Create two different class 
 
-  class FirstScreen extends React.Component {
+    class FirstScreen extends React.Component {
 
-    static navigationOptions = {
-      title:'Home',
-    };
-    render() {
-      return (
-        <View style={styles.container}>
-          <Button onPress={() => this.props.navigation.navigate('MainPage')} title='Go to Main Screen' />
-        </View>
-      );
+      static navigationOptions = {
+        title:'Home',
+      };
+      render() {
+        return (
+          <View style={styles.container}>
+            <Button onPress={() => this.props.navigation.navigate('MainPage')} title='Go to Main Screen' />
+          </View>
+        );
+      }
     }
-  }
 
 
-  class SecondScreen extends React.Component {
+    class SecondScreen extends React.Component {
 
-    static navigationOptions = {
-      title:'Main',
-    };
+      static navigationOptions = {
+        title:'Main',
+      };
 
-    render() {
-      return (
-        <View style={styles.container}>
-          <Button onPress={() => this.props.navigation.navigate('Home')} title='Go Back to Home Screen' />
-        </View>
-      );
+      render() {
+        return (
+          <View style={styles.container}>
+            <Button onPress={() => this.props.navigation.navigate('Home')} title='Go Back to Home Screen' />
+          </View>
+        );
+      }
     }
-  }
 
-3. 3. Create Stack Navigator using the createStackNavigator() method
+  3. Create Stack Navigator using the createStackNavigator() method
 
-  const navigationPages = createStackNavigator({
-    Home: { screen: FirstScreen },
-    MainPage: { screen: SecondScreen }
-  },
-  {
-    initialRouteName: 'Home'
-  });
+    const navigationPages = createStackNavigator({
+      Home: { screen: FirstScreen },
+      MainPage: { screen: SecondScreen }
+    },
+    {
+      initialRouteName: 'Home'
+    });
 
-3. 4. Create App Container using the creaeteAppNavigator() method
+  4. Create App Container using the creaeteAppNavigator() method
 
-  const App = createAppContainer(navigationPages);
+    const App = createAppContainer(navigationPages);
 
-3. 5. Export the created app container 
+  5. Export the created app container 
   
-  export default App;
+    export default App;
 
 4. Now run the expo start command to preview the application in your mobile device or simulator
 
