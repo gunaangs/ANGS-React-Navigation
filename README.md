@@ -1,4 +1,4 @@
-# angsnavigation
+# ANGS React Navigation
 
 1. Create a new Expo project using below command
 
