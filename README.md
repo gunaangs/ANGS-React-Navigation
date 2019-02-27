@@ -2,19 +2,19 @@
 
 1. Create a new Expo project using below command
 
-  $ expo init angsnavigation
+    $ expo init angsnavigation
 
 2. Need to install react navigation dependency using the below command
 
-  $ npm install --save react-navigation
+    $ npm install --save react-navigation
 
 3. Modify the App.js file like below
 
-  1. Import the react navigation into App.js file
+  3.1. Import the react navigation into App.js file
 
     import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-  2. Create two different class 
+  3.2. Create two different class 
 
     class FirstScreen extends React.Component {
 
@@ -46,7 +46,7 @@
       }
     }
 
-  3. Create Stack Navigator using the createStackNavigator() method
+  3.3. Create Stack Navigator using the createStackNavigator() method
 
     const navigationPages = createStackNavigator({
       Home: { screen: FirstScreen },
@@ -56,11 +56,11 @@
       initialRouteName: 'Home'
     });
 
-  4. Create App Container using the creaeteAppNavigator() method
+  3.4. Create App Container using the creaeteAppNavigator() method
 
     const App = createAppContainer(navigationPages);
 
-  5. Export the created app container 
+  3.5. Export the created app container 
   
     export default App;
 
